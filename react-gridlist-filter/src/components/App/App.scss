@@ -1,0 +1,80 @@
+@mixin breakpoint($point) {
+  @if $point == large {
+      @media (min-width: 1025px) { @content; }
+  }
+  @if $point == vsmall {
+      @media (max-width: 374px) { @content; }
+  }
+  @if $point == small {
+      @media (max-width: 767px) { @content; }
+  }
+  @if $point == tablet {
+      @media (min-width: 768px) and (max-width: 1024px) { @content; }
+  }
+  @if $point == mediumToLarge {
+    @media (min-width: 768px) and (max-width: 1252px) { @content; }
+ }
+ 
+}
+
+.spinner {
+  height: 50px;
+  width: 50px;
+  background-image: url("https://cdnjs.cloudflare.com/ajax/libs/galleriffic/2.0.1/css/loader.gif"); 
+}
+
+ /*change template column to update the no. of columns to be displayed in a row */
+.item-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-column-gap: 30px;
+  @include breakpoint(small) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.button {
+  width: 150px;
+  height: 40px;
+  text-align: center;
+  margin: auto;
+  font-size: 18px;
+  font-weight: bold;
+  @include breakpoint(small) {
+    width: 80px;
+    height: 25px;
+    font-size: 15px;
+  }
+}
+
+.button-div
+{
+  padding-top:10px;
+  text-align: center;
+  @include breakpoint(small) {
+      width: 350px;
+  }
+  @include breakpoint(mediumToLarge) {
+      //width: 400px;
+      text-align: center;
+  }
+}
+
+.textbox {
+  width: 300px;
+  height: 35px;
+  margin: 10px;
+  @include breakpoint(small) {
+    width: 100%;
+    height:20px;
+  }
+  @include breakpoint(mediumToLarge) {
+    width: 200px;
+    height: 30px;
+  }
+  @include breakpoint(tablet) {
+    width: 300px;
+    height: 35px;
+  }
+}
+

@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App Component render correctly text and button component 1`] = `
+<input
+  type="text"
+/>
+`;
+
+exports[`App Component render correctly text and button component 2`] = `<button />`;

@@ -1,0 +1,56 @@
+@mixin breakpoint($point) {
+    @if $point == small {
+        @media (max-width: 767px) { @content; }
+    }
+    @if $point == tablet {
+        @media (min-width: 768px) and (max-width: 1024px) { @content; }
+    }
+    @if $point == mediumToLarge {
+      @media (min-width: 768px) and (max-width: 1252px) { @content; }
+   }
+   
+  }
+
+.bold{
+    font-weight:bold;
+    font-size: 15px;
+}
+
+.wrapper-div{
+    border:solid 1px grey; 
+    width:390px;
+    margin:20px;
+   @include breakpoint(small) {
+        width:340px;
+   }
+
+   @include breakpoint(mediumToLarge) {
+    width:350px;
+   }
+
+ }
+
+.card-info
+{
+    padding: 0px 20px 10px 50px;
+}
+
+.img{
+   height:580px;
+   width: 350px;
+   @include breakpoint(small) {
+    width:300px;
+    height:500px;
+   }
+
+    @include breakpoint(mediumToLarge) {
+    width:320px;
+    height:550px;
+    }
+
+}
+
+.img-span
+{
+    padding:10px;
+}
